@@ -53,6 +53,8 @@ const VariantsImagesModal = ({
       if (data?.uploads && data?.uploads?.length > 0) {
         const formData = new FormData();
         data.uploads.forEach((file) => {
+          console.log("file", file);
+
           formData.append("files", file);
         });
 
@@ -62,6 +64,7 @@ const VariantsImagesModal = ({
         });
 
         const imageRes = await response.json();
+        console.log("imageRes", imageRes);
 
         if (imageRes.files && imageRes.files?.length > 0) {
           const images = [
